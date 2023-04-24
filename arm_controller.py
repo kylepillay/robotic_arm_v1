@@ -33,6 +33,7 @@ wrist = Wrist(kit.servo[3])
 twist_wrist = WristTwist(kit.servo[11])
 claw = Claw(kit.servo[12])
 
+# This is just for testing
 while True:
     try:
         command = input("Enter a command: ").strip()
@@ -59,6 +60,6 @@ while True:
         else:
             print("Sorry, I do not understand the command.")
     except ValueError:
-        print ("Sorry, I do not understand the command.") 
+        print ("It seems somthing has gone wrong.")
     
 
