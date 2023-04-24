@@ -9,12 +9,23 @@ class Wrist:
         angle = math.ceil(self.servo.angle)
         for n in range(amount):
             angle += 1
-            self.servo.angle = angle
-            sleep(0.02)
+            
+            if math.floor(self.servo.angle) <= 180:
+                self.servo.angle = angle
+                sleep(0.02)
+            else:
+                print("maximum")
+                break
     
     def moveBackward(self, amount):
         angle = math.ceil(self.servo.angle)
         for n in range(amount):
             angle -= 1
-            self.servo.angle = angle
-            sleep(0.02)
+            
+            if math.floor(self.servo.angle) >= 0:
+                self.servo.angle = angle
+                sleep(0.02)
+            else:
+                print("maximum")
+                break
+            

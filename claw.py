@@ -5,7 +5,7 @@ class Claw:
         self.servo = servo
     
     def grab(self):
-        self.servo.angle = 70
+        self.servo.angle = 0
     
     def release(self):
-        self.servo.angle = 0
+        self.servo.angle = 180

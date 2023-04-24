@@ -11,26 +11,27 @@ from arm_base import ArmBase
 
 kit = ServoKit(channels=16)
 
-kit.servo[0].angle = 150
-kit.servo[1].angle = 150
+# Shoulder
+kit.servo[5].angle = 100
+kit.servo[6].angle = 80
 
-kit.servo[2].angle = 150
-kit.servo[3].angle = 150
+# Elbow
+kit.servo[10].angle = 80
 
-kit.servo[4].angle = 170
+#Wrist
+kit.servo[3].angle = 180
 
-kit.servo[5].angle = 70
+# Wrist Twist
+kit.servo[11].angle = 90
 
-kit.servo[6].angle = 0
+# Claw
+kit.servo[12].angle = 180
 
-kit.servo[7].angle = 90
-
-shoulder = Shoulder(kit.servo[0], kit.servo[1])
-elbow = Elbow(kit.servo[2], kit.servo[3])
-wrist = Wrist(kit.servo[4])
-twist_wrist = WristTwist(kit.servo[5])
-claw = Claw(kit.servo[6])
-arm_base = ArmBase(kit.servo[7])
+shoulder = Shoulder(kit.servo[5], kit.servo[6])
+elbow = Elbow(kit.servo[10])
+wrist = Wrist(kit.servo[3])
+twist_wrist = WristTwist(kit.servo[11])
+claw = Claw(kit.servo[12])
 
 while True:
     try:
@@ -55,10 +56,6 @@ while True:
             twist_wrist.twistClockwise(30)
         elif command == "twcc":
             twist_wrist.twistCounterClockwise(30)
-        elif command == "tac":
-            arm_base.turnClockwise(30)
-        elif command == "tacc":
-            arm_base.turnCounterClockwise(30)
         else:
             print("Sorry, I do not understand the command.")
     except ValueError:
