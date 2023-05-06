@@ -16,3 +16,11 @@ def move(direction, amount, servo):
         else:
             print("maximum")
             break
+
+
+def move_to_point(servo, point, move_backward, move_forward):
+    angle = math.ceil(servo.angle)
+    if (point - angle) > 0:
+        move_backward(point - angle)
+    else:
+        move_forward(abs(point - angle))

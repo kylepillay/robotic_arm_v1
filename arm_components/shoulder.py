@@ -1,6 +1,8 @@
 import math
 from time import sleep
 
+import utilities
+
 
 # When Servo1 is at 0, the arm is full forward
 
@@ -40,3 +42,6 @@ class Shoulder:
             else:
                 print("maximum")
                 break
+
+    def move_to(self, point):
+        utilities.move_to_point(self.servo1, point, self.move_backward, self.move_forward)

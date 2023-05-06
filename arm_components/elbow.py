@@ -1,12 +1,7 @@
 import utilities
+from arm_components.arm_component_base import ArmComponentBase
 
 
-class Elbow:
+class Elbow(ArmComponentBase):
     def __init__(self, servo):
-        self.servo = servo
-
-    def move_forward(self, amount):
-        utilities.move("negative", amount, self.servo)
-
-    def move_backward(self, amount):
-        utilities.move("negative", amount, self.servo)
+        super().__init__(servo)
