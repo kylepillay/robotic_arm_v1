@@ -15,3 +15,13 @@ class Arm:
         Thread(target=self.shoulder.move_to, args=[0]).start()
         Thread(target=self.elbow.move_to, args=[180]).start()
         Thread(target=self.wrist.move_to, args=[0]).start()
+
+    def wake(self):
+        Thread(target=self.shoulder.move_to, args=[90]).start()
+        Thread(target=self.elbow.move_to, args=[90]).start()
+        Thread(target=self.wrist.move_to, args=[90]).start()
+
+    def stretch(self):
+        Thread(target=self.shoulder.move_to, args=[90]).start()
+        Thread(target=self.elbow.move_to, args=[30]).start()
+        Thread(target=self.wrist.move_to, args=[25]).start()
