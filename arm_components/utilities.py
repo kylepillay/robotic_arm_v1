@@ -12,7 +12,6 @@ def move(direction, amount, servo):
 
         if angle >= 0:
             servo.angle = angle
-            print(angle)
             sleep(0.01)
         else:
             print("maximum")
