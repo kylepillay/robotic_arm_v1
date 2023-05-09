@@ -1,4 +1,5 @@
 from initialize import set_servo_positions, initialize_arm
+import asyncio
 
 
 set_servo_positions()
@@ -7,7 +8,13 @@ arm = initialize_arm()
 # This is just for testing
 while True:
     command = input("Enter a command: ").strip()
-    if command == "grab":
+    if command == "stretch":
+        asyncio.run(arm.stretch())
+    elif command == "rest":
+        asyncio.run(arm.rest())
+    elif command == "wake":
+        asyncio.run(arm.wake())
+    elif command == "grab":
         arm.claw.grab()
     elif command == "release":
         arm.claw.release()
@@ -23,6 +30,8 @@ while True:
         arm.elbow.move_backward(30)
     elif command == "mte":
         arm.elbow.move_to(90)
+    elif command == "mtw":
+        arm.wrist.move_to(120)
     elif command == "fw":
         arm.wrist.move_forward(30)
     elif command == "bw":

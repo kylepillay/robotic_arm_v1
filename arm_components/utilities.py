@@ -12,6 +12,7 @@ def move(direction, amount, servo):
 
         if angle >= 0:
             servo.angle = angle
+            print(angle)
             sleep(0.01)
         else:
             print("maximum")
@@ -34,7 +35,7 @@ def move_two(direction, amount, servo1, servo2):
             angle1 -= 1
             angle2 += 1
 
-        if math.floor(servo1.angle) <= 180:
+        if 180 >= angle1 >= 0:
             servo1.angle = angle1
             servo2.angle = angle2
             sleep(0.01)
@@ -48,5 +49,5 @@ def move_to_point(servo, point, move_backward, move_forward):
 
     if (point - angle) > 0:
         move_backward(point - angle)
-    elif abs(point - angle) < 180:
+    else:
         move_forward(abs(point - angle))

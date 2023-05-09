@@ -17,16 +17,12 @@ def set_servo_positions():
     # Shoulder
     kit.servo[5].angle = 0
     kit.servo[6].angle = 180
-
     # Elbow
     kit.servo[10].angle = 180
-
     # Wrist
     kit.servo[3].angle = 0
-
     # Twist Wrist
     kit.servo[11].angle = 90
-
     # Claw
     kit.servo[12].angle = 180
 
